@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show, :new, :create]
+
   def index
     @projects = Project.all.order(:created_at).limit(12)
   end

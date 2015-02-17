@@ -3,11 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(()->
-	$("#alert").hide()
 	$("#report").click(()->
-		$("#alert").show()
+		$("#alert").removeClass("hide")
 	)
 	$("#exit").click(()->
-		$("#alert").hide()
+		$("#alert").addClass("hide")
 	)
 )

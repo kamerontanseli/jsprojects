@@ -1,0 +1,18 @@
+<div class="col-md-12 align">
+	<div class="page-header">
+  		<h1><%= @project.title %> <small> created at <%= @project.created_at %></small></h1>
+	</div>
+
+	<%= image_tag(@project.img, :class => "image") %>
+	<br>
+	<br>
+	<p><%= @project.desc %></p>
+<div class="btn-group" role="group" aria-label="...">
+<%= link_to "Back", "/", :class => "btn btn-primary" %>
+
+<%= link_to "Edit", pages_edit_path(:id => @project.id), :class => "btn btn-info" %>
+
+<%= link_to "Delete", {action: :destroy, id: @project.id}, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+<br><br>
+</div>
+</div>

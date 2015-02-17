@@ -1,0 +1,31 @@
+<div class="col-md-12">
+	<div class="jumbotron">
+	  <h1>Welcome to JavaScript Projects</h1>
+	  <p>This is a site where any user can upload a project, no matter how big or small it is!</p>
+	  <p><%= link_to "Create a new project!", "/pages/new", :class => "btn-lg btn btn-primary" %></p>
+	</div>
+
+
+	<br>
+	<div class="row stuffParent">
+	<% @projects.each do |project| %>
+	  <div class="col-md-8 stuff">
+	  <div class="panel panel-default">
+		<div class="panel-heading"><%= project.title %></div> 
+		<div class="panel-body">
+		<br />
+		<%= image_tag(project.img, :class => "img-responsive") %>
+		<br />
+		<%= project.desc.split(/\s+/).slice(0,10).join(' ') %>
+		<br /><br>
+		<div class="links">
+			 <%= link_to "Show", pages_show_path(:id => project.id), :class => "btn btn-lg btn-block btn-primary" %>
+		</div>
+		</div>
+	  </div>
+	  </div>
+	<% end %>
+	</div>
+</div>
+
+

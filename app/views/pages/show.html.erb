@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12 align">
+	<div class="page-header">
+  		<h1><%= @project.title %> <small> created at <%= @project.created_at %></small></h1>
+	</div>
+	<div id="alert" class="alert alert-danger alert-dismissible" role="alert">
+	  <button type="button" id="exit" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  <strong>Report!</strong> Email your report with the project URL to kamytablet@gmail.com.
+	</div>
+
+	<%= image_tag(@project.img, :class => "image") %>
+	<br>
+	<br>
+	<p><%= @project.desc %></p>
+	<%= link_to "Back", "/", :class => "btn btn-lg btn-primary", :style => "margin-right: 20px;" %><button id="report" class="btn btn-lg btn-danger">Report</button>
+	<br><br>
+</div>

@@ -1,0 +1,22 @@
+<div class="col-md-6 edit">
+	<div class="page-header">
+  		<h1><%= @project.title %> <small> created at <%= @project.created_at %></small></h1>
+	</div>
+
+	<%= image_tag(@project.img, :class => "image") %>
+	<br>
+	<br>
+	<p><%= @project.desc %></p>
+
+<%= form_for(:project, :url => page_path(@project), :method => :put) do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title, :class => "form-control" %> <br /><br/>
+	<%= f.label :desc %>
+	<%= f.text_field :desc, :class => "form-control" %> <br /><br/>
+	<%= f.label :img %>
+	<%= f.url_field :img, :class => "form-control" %><br/><br/>
+	<%= f.submit "Update", :class => "btn btn-success" %>
+	<br><br>
+<% end %>
+
+</div>

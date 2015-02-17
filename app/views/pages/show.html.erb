@@ -4,15 +4,12 @@
 	<div class="page-header">
   		<h1><%= @project.title %> <small> created at <%= @project.created_at %></small></h1>
 	</div>
-	<div id="alert" class="alert alert-danger alert-dismissible hide" role="alert">
-	  <button type="button" id="exit" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  <strong>Report!</strong> Email your report with the project URL to kamytablet@gmail.com.
-	</div>
 
 	<%= image_tag(@project.img, :class => "image") %>
 	<br>
 	<br>
 	<p><%= @project.desc %></p>
-	<%= link_to "Back", "/", :class => "btn btn-lg btn-primary", :style => "margin-right: 20px;" %><button id="report" class="btn btn-lg btn-danger">Report</button>
+	<%= link_to "Back", "/", :class => "btn btn-lg btn-primary", :style => "margin-right: 20px;" %>
+	<button id="report" class="btn btn-lg btn-danger" onclick='alert("To report please email kamytablet@gmail.com with the project url and the complaint. Thank you.");'>Report</button>
 	<br><br>
 </div>
